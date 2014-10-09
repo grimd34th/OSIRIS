@@ -1,0 +1,18 @@
+language: python
+python:
+  - "2.7"
+  
+cache: apt
+
+before_install:
+        # Update repositories to not be shit.
+        - sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu/ trusty main universe"
+        - sudo apt-get update
+
+install: 
+  - "sudo apt-get install -y libev-dev"
+  - "pip install pyev"
+
+script: 
+  - "sudo bash install.sh"
+  - "sudo service osiris start"
